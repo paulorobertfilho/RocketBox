@@ -1,23 +1,23 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const path = require('path');
-const cors = require('cors');
+const express = require("express");
+const mongoose = require("mongoose");
+const path = require("path");
+const cors = require("cors");
 
 const app = express();
 
 app.use(cors());
 
-const server = require('http').Server(app);
-const io = require('socket.io')(server);
+const server = require("http").Server(app);
+const io = require("socket.io")(server);
 
-io.on('connection', socket => {
+io.on("connection", socket => {
   socket.on('connectRoom', box => {
     socket.join(box);
   })
 });
 
 mongoose
-  .connect("mongodb+srv://rocketbox:O3x1irrnIkxCpdhr@cluster0-jxsc8.mongodb.net/rocketbox?retryWrites=true&w=majority",
+  .connect("mongodb+srv://rocketbox:rocketbox@cluster0-jxsc8.mongodb.net/test?retryWrites=true&w=majority",
     { useNewUrlParser: true, }
   )
   .then(() => console.log('MongoDB Connected'))
