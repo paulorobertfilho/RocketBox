@@ -10,6 +10,8 @@ app.use(cors());
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
 
+const PORT = process.env.PORT || 3333;
+
 io.on("connection", socket => {
   socket.on('connectRoom', box => {
     socket.join(box);
@@ -17,7 +19,7 @@ io.on("connection", socket => {
 });
 
 mongoose
-  .connect("mongodb+srv://rocketbox:rocketbox@cluster0-jxsc8.mongodb.net/test?retryWrites=true&w=majority",
+  .connect("mongodb+srv://adminbox:adminbox@cluster0-jxsc8.mongodb.net/rocketbox?retryWrites=true&w=majority",
     { useNewUrlParser: true, }
   )
   .then(() => console.log('MongoDB Connected'))
@@ -25,7 +27,7 @@ mongoose
 
 app.use((req, res, next) => {
   req.io = io;
-  return next;
+  return next();
 });
 
 app.use(express.json());
@@ -34,4 +36,6 @@ app.use('/files', express.static(path.resolve(__dirname, '..', 'temp')));
 
 app.use(require('./routes'));
 
-server.listen(process.env.PORT || 3333);
+server.listen(PORT, function () {
+  console.log('listening on *:' + PORT);
+});
