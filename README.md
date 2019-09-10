@@ -2,4 +2,8 @@ Projeto baseado no modelo DropBox com funcionalidades de criação de box para s
 
 Backend e Frontend rodando via Heroku.
 
-![alt text](https://imgur.com/yKSwp6b)
+![Homepage](https://imgur.com/yKSwp6b)
+
+![Boxpage](https://imgur.com/Lk3u75A)
+
+![Content](https://imgur.com/a/iiYbXEf)
