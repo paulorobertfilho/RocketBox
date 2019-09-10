@@ -8,6 +8,7 @@ export default class Main extends Component {
   state = {
     newBox: '',
   };
+
   handleSubmit = async e => {
     e.preventDefault();
     const response = await api.post('boxes', {
@@ -15,9 +16,11 @@ export default class Main extends Component {
     });
     console.log(response.data);
   };
+
   handleInputChange = (e) => {
     this.setState({ newBox: e.target.value })
   };
+
   render() {
     return (
       <div id="main-container">
