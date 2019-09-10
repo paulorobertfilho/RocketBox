@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import api from '../../services/api'
+import api from '../../services/api';
 
 import './styles.css';
 import logo from '../../assets/logo.svg';
@@ -7,7 +7,6 @@ import logo from '../../assets/logo.svg';
 export default class Main extends Component {
   state = {
     newBox: '',
-
   };
   handleSubmit = async e => {
     e.preventDefault();
