@@ -11,12 +11,18 @@ import logo from '../../assets/logo.png';
 export default class Main extends Component {
   state = {
     newBox: '',
-  }
+  };
+  async componentDidMount() {
+    const box = await AsyncStorage.getItem('@RocketBox:box');
+    if (box) {
+      this.props.navigation.navigate('Box');
+    }
+  };
   handleSignIn = async () => {
     const response = await api.post('boxes', {
       title: this.state.newBox,
     });
-    await asyncstorage.setItem('@rocketbox:')
+    await AsyncStorage.setItem('@RocketBox:box', response.data._id);
     this.props.navigation.navigate('Box');
   };
   render() {
@@ -33,7 +39,7 @@ export default class Main extends Component {
           value={this.state.newBox}
           onChangeText={text => this.setState({ newBox: text })}
         />
-        <TouchableOpacity onPress={() => { this.handleSignIn }} style={styles.button}>
+        <TouchableOpacity onPress={this.handleSignIn} style={styles.button}>
           <Text style={styles.buttonText}>Criar</Text>
         </TouchableOpacity>
       </View>

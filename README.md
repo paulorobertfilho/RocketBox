@@ -1,7 +1,7 @@
 Projeto baseado no modelo DropBox com funcionalidades de criação de box para separar inserção de arquivos e drag&drop.
 
 Backend e Frontend rodando via Heroku.
-Mobile em construção.
+Mobile local.
 
 ![Homepage](https://imgur.com/yKSwp6b)
 

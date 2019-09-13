@@ -10,14 +10,17 @@
   "dependencies": {
     "@react-native-community/async-storage": "react-native-community/async-storage",
     "axios": "^0.19.0",
+    "date-fns": "^2.2.1",
     "react": "16.8.6",
     "react-native": "0.60.5",
     "react-native-file-viewer": "^2.0.0",
     "react-native-fs": "^2.14.1",
     "react-native-gesture-handler": "^1.4.1",
     "react-native-image-picker": "^1.1.0",
+    "react-native-iphone-x-helper": "^1.2.1",
     "react-native-vector-icons": "^6.6.0",
-    "react-navigation": "^4.0.3"
+    "react-navigation": "^4.0.3",
+    "socket.io-client": "^2.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
